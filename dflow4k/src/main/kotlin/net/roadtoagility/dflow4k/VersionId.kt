@@ -1,23 +1,12 @@
 package net.roadtoagility.dflow4k
 
-import kotlin.Int as Int
-
+/** Value Object for Entity versioning. */
 data class VersionId(
-    val value: Long
+    override val value: Long
 
-    ): Comparable<VersionId> {
+    ): Comparable<VersionId>, ValueObject<Long> {
 
-    constructor (versionId: VersionId) : this(versionId.value) {
-
-    }
-
-    fun empty(): VersionId {
-        return VersionId(VersionEmpty)
-    }
-
-    fun new(): VersionId {
-        return VersionId(VersionInitial)
-    }
+    constructor (versionId: VersionId) : this(versionId.value)
 
     fun next(): VersionId {
         return VersionId(this + increment())
@@ -50,8 +39,16 @@ data class VersionId(
     operator fun plus(b: VersionId) = VersionId(this.value + b.value)
 
     companion object {
-        const val VersionEmpty = 0L
-        const val VersionInitial = 1L
-        const val VersionIncrement = 1L
+        private const val VersionEmpty: Long = 0L
+        private const val VersionInitial: Long = 1L
+        private const val VersionIncrement: Long = 1L
+
+        fun empty(): VersionId {
+            return VersionId(VersionEmpty)
+        }
+        fun new(): VersionId {
+            return VersionId(VersionInitial)
+        }
+
     }
 }

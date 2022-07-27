@@ -3,6 +3,7 @@ package net.roadtoagility.dflow4k
 import org.testng.annotations.DataProvider
 import kotlin.test.assertEquals
 
+/** VersionId data provider. */
 open class VersionIdBaseTest {
     @DataProvider(name = "versionIdValueData")
     fun versionIdValueData(): MutableIterator<Array<Long>> {
@@ -55,7 +56,8 @@ open class VersionIdBaseTest {
     }
 }
 
-internal class VersionIdTest: VersionIdBaseTest() {
+/** Version value object tests. */
+class VersionIdTest: VersionIdBaseTest() {
 
     @org.testng.annotations.Test(dataProvider = "versionIdValueData", groups = ["version-id"])
     fun testGetValue(version: Long, expected: Long) {

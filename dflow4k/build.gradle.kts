@@ -13,6 +13,7 @@ repositories {
 
 dependencies {
     implementation("org.testng:testng:7.6.0")
+    implementation("io.konform:konform:0.4.0")
     testImplementation(kotlin("test"))
 }
 
