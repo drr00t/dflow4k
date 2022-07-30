@@ -2,9 +2,9 @@ name: Quality Build CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
   pull_request:
-    branches: [ main ]
+    branches: [ master ]
 
 jobs:
   build:
@@ -21,7 +21,3 @@ jobs:
       run: chmod +x gradlew
     - name: Check coverage metrics
       run: ./gradlew koverVerify
-    - name: Upload coverage reports
-      uses: codecov/codecov-action@v2
-      with:
-        files: build/reports/kover/report.xml
