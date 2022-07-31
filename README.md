@@ -1,3 +1,3 @@
-# dflow4k
+DFlow for Kotlin port
 
-[![Test](https://github.com/drr00t/dflow4k/actions/workflows/gradle.yml/badge.svg?branch=main)](https://github.com/drr00t/dflow4k/actions/workflows/gradle.yml)
+[![Quality Build CI](https://github.com/drr00t/dflow4k/actions/workflows/main.yml/badge.svg)](https://github.com/drr00t/dflow4k/actions/workflows/main.yml)
