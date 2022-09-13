@@ -1,11 +1,9 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version "1.6.21"
-    id("org.jetbrains.kotlinx.kover") version "0.5.0"
+    id("dflow4k.kotlin-application-conventions")
 }
 
-group = "com.github.drr00t"
+group = "net.roadtoagility"
 version = "1.0-SNAPSHOT"
 
 repositories {
@@ -13,15 +11,12 @@ repositories {
 }
 
 dependencies {
-    implementation("org.testng:testng:7.6.0")
-    implementation("io.konform:konform:0.4.0")
+    implementation("io.konform:konform-jvm:0.4.0")
     testImplementation(kotlin("test"))
 }
 
-tasks.test {
-    useTestNG()
-}
-
-tasks.withType<KotlinCompile> {
-    kotlinOptions.jvmTarget = "1.8"
+tasks {
+    test {
+        useTestNG()
+    }
 }
