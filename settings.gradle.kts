@@ -8,4 +8,4 @@
  */
 
 rootProject.name = "dflow4k"
-include("app", "dflow4k")
+include("dflow4k")
